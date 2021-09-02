@@ -23,6 +23,7 @@ namespace LibGit2Sharp
         {
             var origId = ObjectId.BuildFromPtr(&rawHunk->orig_commit_id);
             var finalId = ObjectId.BuildFromPtr(&rawHunk->final_commit_id);
+             finalId = ObjectId.BuildFromPtr(&rawHunk->final_commit_id);
 
             finalCommit = new Lazy<Commit>(() => repository.Lookup<Commit>(finalId));
             origCommit = new Lazy<Commit>(() => repository.Lookup<Commit>(origId));
